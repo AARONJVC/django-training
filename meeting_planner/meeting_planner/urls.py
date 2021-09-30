@@ -21,6 +21,8 @@ from website.views import welcome, date, personal_info
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', welcome),
+    path('welcome', welcome),
+    path('index.html', welcome),
     path('date.html', date),
     path("about", personal_info)
 ]
