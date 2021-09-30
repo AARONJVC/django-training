@@ -8,8 +8,15 @@
     <h1>
         WELCOME TO THE PAGE
     </h1>
-    <p>
-        Your meeting <em>{{meeting_name}}</em> is  coming up at <b>{{meeting_time}}</b> on <b>{{meeting_date}}</b>!
-    </p>
+    <h2>
+        THERE ARE {{count}} MEETINGS
+    </h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li>
+                <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
+            </li>
+         {% endfor %}
+    </ul>
 </body>
 </html>

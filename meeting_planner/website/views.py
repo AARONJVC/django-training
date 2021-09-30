@@ -2,10 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from datetime import datetime
 
+from meetings.models import Meeting
+
 # Create your views here.
 
 def welcome(request):
-    return  render(request, "website/welcome.html", {"meeting_name": "Krispy Kreme Donut Eating Contest", "meeting_time": "11:30:00", "meeting_date": "05/12/2021"})
+    return  render(request, "website/welcome.html", {"meetings": Meeting.objects.all(), "count": Meeting.objects.count()})
 
 def date(request):
     return  HttpResponse("Page served at " + str(datetime.now()))
