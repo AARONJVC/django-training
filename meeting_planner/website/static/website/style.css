@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+    color: lightpink;
+    background-color: black;
+}
+
+a:visited {
+    color:cadetblue;
+}
+a:visited.hovered {
+    color:orangered;
+}
+a.hovered {
+    color:cyan;
+}
+a {
+    color:darkorchid;
+}

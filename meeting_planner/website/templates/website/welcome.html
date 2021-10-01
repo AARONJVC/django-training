@@ -1,22 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Welcome!</title>
-</head>
-<body>
-    <h1>
-        WELCOME TO THE PAGE
-    </h1>
-    <h2>
-        THERE ARE {{count}} MEETINGS
-    </h2>
-    <ul>
-        {% for meeting in meetings %}
-            <li>
-                <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
-            </li>
-         {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}
+Welcome!
+{% endblock %}
+
+{% block content %}
+<h1>
+    WELCOME TO THE PAGE
+</h1>
+<h2>
+    THERE ARE {{count}} MEETINGS
+</h2>
+<ul>
+    {% for meeting in meetings %}
+        <li>
+            <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
+        </li>
+        {% endfor %}
+</ul>
+{% endblock %}
